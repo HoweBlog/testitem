@@ -1,13 +1,62 @@
-/* 去除样式 */
-body{
-    margin: 0;
-    padding: 0;
+
+/* 公共样式 - 开始 */
+/* 左右浮动 */
+.Left{
+    float: left;
+    overflow:hidden;
+}
+.Right{
+    float: right;
+    overflow:hidden;
 }
 
+/* 公共样式 - 结束 */
+
 /* 版心 */
-#typeArea{
+#TypeArea{
     width: 1140px;
     height: 500px;
     margin: 0 auto;
+}
+
+/* 顶部 */
+#Title{
+    height: 100px;
+}
+.Logo{
+    width: 105px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 33.33px;
+    background: rgb(252, 32, 21);
+    color: #fff;
+    text-align: center;
+    letter-spacing:2px;
+}
+
+/* 内容 Content */
+#Content{
+    background: rgb(245, 248, 249);
+}
+
+/* 导航 */
+.Navigation{
+    height: 170px;
+}
+.Navigation-left{
+    margin-top: 85px;
+}
+.Navigation-left h3{
+    font-size: 20px;
+    color: rgb(38, 43, 46);
+}
+.Navigation-left p{
+    color: rgb(139, 143, 145);
+    font-size: 16px;
+}
+ul.Navigation-right li{
+    font-size: 16px;
+    margin-left: 10px;
+    background: pink;
 }
 

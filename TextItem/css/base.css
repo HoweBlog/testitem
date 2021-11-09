@@ -1,0 +1,11 @@
+body,button,dd,dl,dt,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+body,button,input,select,textarea,a{font:12px/1.6em Microsoft Yahei,Heiti,NSimSun,SimSun,FangSong;}
+h1,h2,h3,h4,h5,h6{font-size:12px; font-weight: normal;}
+ol,ul{list-style:none}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+img{border:0}
+button,input,select,textarea{font-size:100%; outline:none;}
+textarea{resize:none;}
+button{border-radius:0}
+table{border-collapse:collapse;}
