@@ -13,17 +13,23 @@
 /* 公共样式 - 结束 */
 
 /* 版心 */
-#TypeArea{
+body{
+    background: rgb(245, 248, 249);
+}
+.TypeArea{
     width: 1140px;
     height: 500px;
     margin: 0 auto;
+    /* background: rgb(245, 248, 249); */
 }
 
 /* 顶部 */
-#Title{
+.Title{
     height: 100px;
+    background: #fff;
 }
-.Logo{
+.Title a{
+    display: block;
     width: 105px;
     height: 30px;
     line-height: 30px;
@@ -34,17 +40,12 @@
     letter-spacing:2px;
 }
 
-/* 内容 Content */
-#Content{
-    background: rgb(245, 248, 249);
-}
-
 /* 导航 */
 .Navigation{
     height: 170px;
 }
 .Navigation-left{
-    margin-top: 85px;
+    margin-top: 65px;
 }
 .Navigation-left h3{
     font-size: 20px;
@@ -53,10 +54,17 @@
 .Navigation-left p{
     color: rgb(139, 143, 145);
     font-size: 16px;
+    margin-top: 10px;
 }
 ul.Navigation-right li{
-    font-size: 16px;
-    margin-left: 10px;
-    background: pink;
+    font-weight: 700;
+    margin-top: 85px;
+    font-size: 15px;
+    margin: 85px 20px 0;
+    padding-bottom: 2px;
+}
+/* 鼠标放上下划线 */
+ul.Navigation-right .Current,ul.Navigation-right li:hover{
+    border-bottom: 2px rgba(139, 143, 145,.5) solid;
 }
 
