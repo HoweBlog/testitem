@@ -1,11 +1,11 @@
 
 /* 公共样式 - 开始 */
 /* 左右浮动 */
-.Left{
+.left{
     float: left;
     overflow:hidden;
 }
-.Right{
+.right{
     float: right;
     overflow:hidden;
 }
@@ -16,7 +16,7 @@
 body{
     background: rgb(245, 248, 249);
 }
-.TypeArea{
+.typeArea{
     width: 1140px;
     height: 500px;
     margin: 0 auto;
@@ -24,11 +24,11 @@ body{
 }
 
 /* 顶部 */
-.Title{
+.title{
     height: 100px;
     background: #fff;
 }
-.Title a{
+.title a{
     display: block;
     width: 105px;
     height: 30px;
@@ -41,22 +41,22 @@ body{
 }
 
 /* 导航 */
-.Navigation{
+.navigation{
     height: 170px;
 }
-.Navigation-left{
+.navigation-left{
     margin-top: 65px;
 }
-.Navigation-left h3{
+.navigation-left h3{
     font-size: 20px;
     color: rgb(38, 43, 46);
 }
-.Navigation-left p{
+.navigation-left p{
     color: rgb(139, 143, 145);
     font-size: 16px;
     margin-top: 10px;
 }
-ul.Navigation-right li{
+ul.navigation-right li{
     font-weight: 700;
     margin-top: 85px;
     font-size: 15px;
@@ -64,7 +64,13 @@ ul.Navigation-right li{
     padding-bottom: 2px;
 }
 /* 鼠标放上下划线 */
-ul.Navigation-right .Current,ul.Navigation-right li:hover{
+ul.navigation-right .current,ul.navigation-right li:hover{
     border-bottom: 2px rgba(139, 143, 145,.5) solid;
 }
 
+/* 轮播图部分  Support */
+.banner>div{
+    width: 560px;
+    border: 1px solid #000;
+    height: 500px;
+}
