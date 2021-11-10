@@ -1,34 +1,43 @@
-
 /* 公共样式 - 开始 */
+
+
 /* 左右浮动 */
-.left{
+
+.left {
     float: left;
-    overflow:hidden;
+    overflow: hidden;
 }
-.right{
+
+.right {
     float: right;
-    overflow:hidden;
+    overflow: hidden;
 }
+
 
 /* 公共样式 - 结束 */
 
+
 /* 版心 */
-body{
+
+body {
     background: rgb(245, 248, 249);
 }
-.typeArea{
+
+.typeArea {
     width: 1140px;
     height: 500px;
     margin: 0 auto;
-    /* background: rgb(245, 248, 249); */
 }
 
+
 /* 顶部 */
-.title{
+
+.title {
     height: 100px;
     background: #fff;
 }
-.title a{
+
+.title a {
     display: block;
     width: 105px;
     height: 30px;
@@ -37,40 +46,65 @@ body{
     background: rgb(252, 32, 21);
     color: #fff;
     text-align: center;
-    letter-spacing:2px;
+    letter-spacing: 2px;
 }
 
+
 /* 导航 */
-.navigation{
+
+.navigation {
     height: 170px;
 }
-.navigation-left{
+
+.navigation-left {
     margin-top: 65px;
 }
-.navigation-left h3{
+
+.navigation-left h3 {
     font-size: 20px;
     color: rgb(38, 43, 46);
 }
-.navigation-left p{
+
+.navigation-left p {
     color: rgb(139, 143, 145);
     font-size: 16px;
     margin-top: 10px;
 }
-ul.navigation-right li{
+
+ul.navigation-right li {
     font-weight: 700;
     margin-top: 85px;
     font-size: 15px;
     margin: 85px 20px 0;
     padding-bottom: 2px;
 }
-/* 鼠标放上下划线 */
-ul.navigation-right .current,ul.navigation-right li:hover{
-    border-bottom: 2px rgba(139, 143, 145,.5) solid;
+
+
+/* 鼠标放上 */
+
+ul.navigation-right .current,
+ul.navigation-right li:hover {
+    border-bottom: 2px rgba(139, 143, 145, .5) solid;
+    cursor: pointer;
 }
 
+
 /* 轮播图部分  Support */
-.banner>div{
+
+.module {
+    padding: 10px 0;
+    height: 288px;
+    border: 1px solid #000;
+}
+
+.banner {
     width: 560px;
     border: 1px solid #000;
-    height: 500px;
+    /* height: 288px; */
+    height: 100%;
 }
+
+
+/* 曲线数据展示 */
+
+.graph {}
