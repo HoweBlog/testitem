@@ -14,7 +14,7 @@
 <body>
     <!-- 顶部 -->
     <div class="title">
-        <div class="typeArea">
+        <div class="typeArea clearboth">
             <div class="left">
                 <a class="logo">LOGO</a>
             </div>
@@ -25,70 +25,140 @@
     </div>
 
     <!-- 导航 -->
-    <div class="typeArea navigation">
+    <div class="typeArea navigation clearboth">
         <div class="left navigation-left">
             <h3>Audience Overview</h3>
             <p>Roseville,CA</p>
         </div>
         <div class="right">
             <ul class="navigation-right">
-                <li class="left current">DASHBOARD</li>
-                <li class="left">PROJECTS</li>
-                <li class="left">CALENDAR</li>
-                <li class="left">MAILBOX</li>
-                <li class="left">SETTINGS</li>
+                <li class="left current"><a href="#">DASHBOARD</a></li>
+                <li class="left"><a href="#">PROJECTS</a></li>
+                <li class="left"><a href="#">CALENDAR</a></li>
+                <li class="left"><a href="#">MAILBOX</a></li>
+                <li class="left"><a href="#">SETTINGS</a></li>
             </ul>
         </div>
     </div>
 
     <!-- 轮播图部分  Support -->
-    <div class="typeArea module">
+    <div class="typeArea module clearboth">
         <div class="left banner">
             <!-- image -->
             <ul class="img_box">
-                <li><img src="../images//image1.png" alt="" width="100%"></li>
-                <li><img src="../images//image2.png" alt="" width="100%"></li>
-                <li><img src="../images//image3.png" alt="" width="100%"></li>
+                <li>
+                    <a href="#"><img src="../images//image1.png" alt="" width="100%"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images//image2.png" alt="" width="100%"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images//image3.png" alt="" width="100%"></a>
+                </li>
             </ul>
             <!-- 点 -->
             <ul class="dot_box">
                 <!-- 自定义属性 -->
-                <li></li>
-                <li class="current"></li>
-                <li></li>
+                <li class="left"></li>
+                <li class="left current"></li>
+                <li class="left"></li>
             </ul>
             <!-- 左右箭头 -->
             <ul class="arrow">
-                <li>&lt;</li>
-                <li>&gt;</li>
+                <li class="left">&lt;</li>
+                <li class="right">&gt;</li>
             </ul>
         </div>
         <div class="right banner">
-
+            <div class="top">
+                <ul>
+                    <li class="left"><a href="#">Support Requests</a></li>
+                    <li class="right">View All</li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <ul class="bottom_title clearboth">
+                    <li><a href="#" class="left">TIME</a></li>
+                    <li><a href="#" class="left">USER NAME</a></li>
+                    <li><a href="#" class="right">STATUS</a></li>
+                </ul>
+                <ul class="clearboth">
+                    <li><a href="#" class="left">9.45pm</a></li>
+                    <li><a href="#" class="left">info@design.com</a></li>
+                    <li><a href="#" class="right btn">Solved</a></li>
+                </ul>
+                <ul class="clearboth">
+                    <li><a href="#" class="left">9.45pm</a></li>
+                    <li><a href="#" class="left">info@design.com</a></li>
+                    <li><a href="#" class="right btn">Solved</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <!-- 曲线图数据展示 -->
-    <div class="typeArea module">
+    <div class="typeArea module clearboth">
         <div class="graph">
-
+            <!-- <p>曲线数据图展示</p> -->
+            <div id="graph" style="width: 100%; height: 300px;"></div>
         </div>
     </div>
 
     <!-- 饼图 柱状图 -->
-    <div class="typeArea module">
+    <div class="typeArea module clearboth">
+        <!-- 饼状图 -->
         <div class="left banner">
-
+            <div id="pieChart" style="width: 100%; height: 300px;"></div>
         </div>
+        <!-- 柱状图 -->
         <div class="right banner">
-
+            <div id="barGraph" style="width: 100%; height: 300px;"></div>
         </div>
     </div>
 
     <!-- 页脚 -->
     <div class="footer">
-
+        <div class="typeArea clearboth">
+            <div class="left footer_logo">
+                <a href="#">LOGO</a>
+            </div>
+            <div class="left clearboth">
+                <ul class="left">
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">CHANNELS</a></li>
+                    <li><a href="#">OVERVIEW</a></li>
+                    <li><a href="#">TIMELINE</a></li>
+                </ul>
+                <ul class="left">
+                    <li><a href="#">SPORT</a></li>
+                    <li><a href="#">CULTURE</a></li>
+                    <li><a href="#">NATURE</a></li>
+                    <li><a href="#">NUSIC</a></li>
+                </ul>
+                <ul class="left">
+                    <li><a href="#">WEATHER</a></li>
+                    <li><a href="#">AUTOS</a></li>
+                    <li><a href="#">LOCAL</a></li>
+                    <li><a href="#">SHOP</a></li>
+                </ul>
+                <ul class="left">
+                    <li><a href="#">FUTURE</a></li>
+                    <li><a href="#">FOOD</a></li>
+                    <li><a href="#">EARTH</a></li>
+                    <li><a href="#">TV</a></li>
+                </ul>
+                <ul class="left">
+                    <li><a href="#">TRAVEL</a></li>
+                    <li><a href="#">RADIO</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    <div class="pageBottom"></div>
+
+    <!-- 引入js -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>
