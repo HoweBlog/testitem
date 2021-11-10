@@ -154,12 +154,16 @@ ul.navigation-right li a:hover {
     position: absolute;
     left: 0;
     top: 0;
-    display: none;
-    transition: all .5s;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
 }
 
 .banner .img_box>.current {
-    display: block;
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
 }
 
 .banner .dot_box {
@@ -167,6 +171,7 @@ ul.navigation-right li a:hover {
     bottom: 7px;
     left: 50%;
     transform: translateX(-50%);
+    transition: all .5s;
 }
 
 .banner .dot_box li {
