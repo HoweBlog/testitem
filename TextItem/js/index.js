@@ -49,32 +49,94 @@
     })
 }
 
-// 曲线图
-{
-    let graph = echarts.init(document.getElementById('graph'));
-    // 指定图表的配置项和数据
-    let option = {
+/** 
+ *  Ajax的Get请求 - 请求echarts数据
+ *  @param { String }           type             请求参数
+ *  @param { String }           titleText        图表 title
+ *  @param { String }           seriesType       数据展示类型 曲线/柱状
+ *  @param { RenderingNode }    seriesData       渲染节点
+ */
+function ajaxGet(type,titleText,seriesType,RenderingNode) { 
+    const xhr = new XMLHttpRequest();
+    let receivedData;
+    xhr.open('GET',"https://edu.telking.com/api/"+"?type="+type, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            receivedData = JSON.parse(xhr.responseText);
+            console.log(receivedData.data);
+            setTimeout(()=>{
+                chartData(titleText,seriesType,receivedData.data.xAxis,receivedData.data.series,RenderingNode);
+            },500)
+        }
+    }
+}
+
+ /** 
+ *  处理 Echarts数据
+ *  @param { Array  }   xAxisData   X轴数据
+ *  @param { Array  }   seriesData  Y轴数据
+ */
+
+ function chartData(titleText,seriesType,xAxisData,seriesData,RenderingNode){
+    let option =  {
         title: {
-            text: '曲线数据图展示',
+            text: titleText,
             left: 'center'
         },
+        // grid: {
+        //     left: '3%',
+        //     right: '4%',
+        //     bottom: '3%',
+        //     containLabel: true
+        //   },
         xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            data: xAxisData
         },
         color: "#337af1",
         yAxis: {
             type: 'value'
         },
         series: [{
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
-            type: 'line',
-            areaStyle: {}
+            barWidth: '30%',
+            data: seriesData,
+            // type: seriesType,
         }]
     };
-    // 使用刚指定的配置项和数据显示图表。
-    graph.setOption(option);
+    RenderingNode.setOption(option);
+ };
+
+// 曲线图
+{
+    let graph = echarts.init(document.getElementById('graph'));
+    let graphData = ajaxGet("month","曲线数据图展示","line",graph);
+
+    
+    // 指定图表的配置项和数据
+    // let option = {
+    //     title: {
+    //         text: '曲线数据图展示',
+    //         left: 'center'
+    //     },
+    //     xAxis: {
+    //         type: 'category',
+    //         boundaryGap: false,
+    //         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    //     },
+    //     color: "#337af1",
+    //     yAxis: {
+    //         type: 'value'
+    //     },
+    //     series: [{
+    //         data: [820, 932, 901, 934, 1290, 1330, 1320],
+    //         type: 'line',
+    //         areaStyle: {}
+    //     }]
+    // };
+    // // 使用刚指定的配置项和数据显示图表。
+    // graph.setOption(option);
 }
 
 // 饼状图
@@ -112,8 +174,12 @@
 }
 
 // 柱状图
+
 {
     let barGraph = echarts.init(document.getElementById('barGraph'));
+    ajaxGet("week","柱状图数据展示","bar",barGraph);
+
+    
     let option = {
         title: {
             text: '柱状图数据展示',
