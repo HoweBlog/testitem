@@ -1,3 +1,24 @@
+// 轮播图
+{
+    let images = document.querySelectorAll(".img_box a>img"); // 获取轮播图片
+    let dotBox = document.querySelectorAll(".dot_box>li"); // 获取播放点
+    let current = 0; // 当前播放位置
+    let Timer; // 定时器
+    autoplay();
+
+    function autoplay() {
+        timer = setInterval(() => {
+            images[current].classList.add("current");
+
+            if (current == images.length - 1) {
+                current = 0
+            } else {
+                current++;
+            };
+        }, 1000);
+    }
+}
+
 // 曲线图
 {
     let graph = echarts.init(document.getElementById('graph'));
