@@ -320,6 +320,7 @@ ul.navigation-right li a:hover {
     text-align: center;
     letter-spacing: 2px;
     line-height: 30px;
+    border-radius: 2px;
 }
 
 .footer .left.footer_logo a {

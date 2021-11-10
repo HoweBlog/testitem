@@ -8,9 +8,19 @@
 
     function autoplay() {
         timer = setInterval(() => {
+            // 删除兄弟节点 class
+            images.forEach(item=>{
+                item.classList.remove("current");
+            });
+            dotBox.forEach(item=>{
+                item.classList.remove("current");
+            });
+            // 添加当前类
             images[current].classList.add("current");
-            images[current].previousSibling.nextSibling.classList.remove("current")
-        }, 1000);
+            dotBox[current].classList.add("current");
+            // 判断是否轮播到最后一张
+            if(current == images.length-1){current=0}else{current++;}
+        }, 1500);
     }
 }
 
