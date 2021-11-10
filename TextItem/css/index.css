@@ -1,7 +1,5 @@
-/* 公共样式 - 开始 */
 
-
-/* 左右浮动 */
+/* 左右浮动 清除浮动 */
 
 .left {
     float: left;
@@ -22,15 +20,6 @@
 .clearboth {
     zoom: 1;
 }
-
-
-/* .left,
-.right {
-    overflow: hidden;
-} */
-
-
-/* 公共样式 - 结束 */
 
 
 /* 版心 */
