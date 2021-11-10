@@ -104,6 +104,72 @@ ul.navigation-right li:hover {
     height: 100%;
 }
 
+.left.banner {
+    position: relative;
+}
+
+.banner .img_box {
+    position: relative;
+}
+
+.banner .img_box li {
+    position: absolute;
+    left: 0;
+    top: 6px;
+}
+
+.banner .dot_box {
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner .dot_box li {
+    width: 10px;
+    height: 10px;
+    background: #bfc1c4;
+    float: left;
+    margin: 5px;
+}
+
+
+/* 当前 */
+
+.banner .dot_box li.current {
+    height: 14px;
+    background: #fff;
+    transform: translateY(-4px);
+}
+
+
+/* 左右箭头 */
+
+.banner .arrow {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.banner .arrow li {
+    color: #fff;
+    font-family: "宋体";
+    font-weight: 700;
+    font-size: 24px;
+    background: rgba(0, 0, 0, .5);
+    padding: 5px;
+    overflow: hidden;
+}
+
+.banner .arrow li:nth-of-type(1) {
+    float: left;
+}
+
+.banner .arrow li:nth-of-type(2) {
+    float: right;
+}
+
 
 /* 曲线数据展示 */
 
