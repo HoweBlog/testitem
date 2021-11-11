@@ -1,8 +1,24 @@
-// 轮播图
+// 导航栏 点击事件
 {
+	let navBtn 		= document.querySelectorAll(".navigation-right li>a");		// 获取导航节点
+	let navBtnBox 	= document.querySelector(".navigation-right");				// 获取导航节点
+	navBtnBox.onclick = function(e){
+		navBtn.forEach((item,indx)=>{
+			if(item == e.target){
+				item.classList.add("current");
+			}else{
+				item.classList.remove("current");
+			};
+		});
+	};
+}
+
+// 轮播图
+{	
     let carousel    = document.querySelector(".left.banner");       // 获取轮播图box
     let images      = document.querySelectorAll(".img_box>li");     // 获取轮播图片
     let dotBox      = document.querySelectorAll(".dot_box>li");     // 获取轮播圆点
+    let dotBoxAll   = document.querySelector(".dot_box");     		// 获取轮播圆点
     let arrow       = document.querySelectorAll(".arrow>li");       // 获取上下切换按钮
     let current     = 0;    	// 当前播放位置
     let Timer       = null; 	// 定时器
@@ -44,13 +60,21 @@
     arrow[0].addEventListener("click",()=>{
         if (current == 0) {current = images.length - 1;}else{current--;};
         SwitchImage(current);
-    })
+    });
     arrow[1].addEventListener("click",()=>{
         if (current == images.length - 1) {current = 0;}else{current++;};
         SwitchImage(current);
-    })
+    });
+	
+	// 小圆点 点击切换
+	dotBoxAll.onclick = function(e){
+		dotBox.forEach((item,index)=>{
+			if(item == e.target) {
+				SwitchImage(index);
+			};
+		});
+	};	
 }
-
 
 
 /** 

@@ -89,20 +89,21 @@ body {
 ul.navigation-right li {
     margin-top: 85px;
     margin: 85px 20px 0;
-    padding-bottom: 2px;
 }
 
 ul.navigation-right li>a {
+	display: inline-block;
     font-size: 15px;
     font-weight: 700;
     color: #000;
+	padding-bottom: 2px;
 }
 
 
 /* 鼠标放上 */
 
 ul.navigation-right .current,
-ul.navigation-right li:hover {
+ul.navigation-right li a:hover {
     border-bottom: 2px rgba(139, 143, 145, .5) solid;
     cursor: pointer;
 }
