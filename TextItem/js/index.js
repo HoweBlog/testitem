@@ -90,11 +90,11 @@ function ajaxGet(type) {
 
  /** 
  *  处理 Echarts数据
- *  @param { String }           titleText       图表 title
- *  @param { String }           seriesType      数据展示类型 曲线/柱状
- *  @param { Array  }   		xAxisData   	X轴数据
- *  @param { Array  }   		seriesData  	Y轴数据
- *  @param { RenderingNode }    seriesData      渲染节点
+ *  @param { String }       titleText       图表 title
+ *  @param { String }       seriesType      数据展示类型 曲线/柱状
+ *  @param { DOM 	}    	RenderingNode   渲染节点
+ *  @param { Array  }   	xAxisData   	X轴数据
+ *  @param { Array  }   	seriesData  	Y轴数据
  */
  function chartData(titleText,seriesType,RenderingNode,xAxisData,seriesData){
     let option =  {
@@ -146,9 +146,6 @@ function ajaxGet(type) {
 			chartData("柱状图数据展示","bar",barGraph,receiveData.data.xAxis,receiveData.data.series);
 		}
 	}
-	
-	// 饼状图
-	
 }
 
 // 饼状图
