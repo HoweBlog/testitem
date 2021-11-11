@@ -101,13 +101,13 @@ function ajaxGet(type) {
             text: titleText,
             left: 'center'
         },
-		tooltip: {
-		    trigger: 'axis',
-		    axisPointer: {
-				type: 'cross',
-				label: {
-					backgroundColor: '#6a7985'
-				}
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
 		    }
 		},
         xAxis: {
@@ -122,8 +122,8 @@ function ajaxGet(type) {
             barWidth: '30%',
             data: seriesData,
             type: seriesType,
-			smooth: true,
-			areaStyle: {}
+            smooth: true,
+            areaStyle: {}
         }]
     };
     RenderingNode.setOption(option);
@@ -136,10 +136,10 @@ function ajaxGet(type) {
 	let parameterFailure    = ajaxGet("month");
 	let receiveData;
 	parameterFailure.onreadystatechange = function (){
-		if (parameterFailure.readyState == 4 && parameterFailure.status == 200) {
-			receiveData = JSON.parse(parameterFailure.responseText);
-			chartData("曲线数据图展示","line",graph,receiveData.data.xAxis,receiveData.data.series);
-		}
+        if (parameterFailure.readyState == 4 && parameterFailure.status == 200) {
+            receiveData = JSON.parse(parameterFailure.responseText);
+            chartData("曲线数据图展示","line",graph,receiveData.data.xAxis,receiveData.data.series);
+        }
 	}
 }
 
@@ -150,10 +150,10 @@ function ajaxGet(type) {
 	let parameterFailure    = ajaxGet("week");
 	let receiveData;
 	parameterFailure.onreadystatechange = function (){
-		if (parameterFailure.readyState == 4 && parameterFailure.status == 200) {
-			receiveData = JSON.parse(parameterFailure.responseText);
-			pieChartFn(receiveData.data);	// 调用生成饼状图
-			chartData("柱状图数据展示","bar",barGraph,receiveData.data.xAxis,receiveData.data.series);
+        if (parameterFailure.readyState == 4 && parameterFailure.status == 200) {
+            receiveData = JSON.parse(parameterFailure.responseText);
+            pieChartFn(receiveData.data);	// 调用生成饼状图
+            chartData("柱状图数据展示","bar",barGraph,receiveData.data.xAxis,receiveData.data.series);
 		}
 	}
 }
@@ -161,31 +161,31 @@ function ajaxGet(type) {
 // 饼状图
 function pieChartFn(receiveData){
     // 获取饼状图 DOM
-	let pieChart = echarts.init(document.getElementById('pieChart'));
-	let option   = {
-	    title: {
-	        text: '饼状图数据展示',
-	        left: 'center'
+    let pieChart = echarts.init(document.getElementById('pieChart'));
+    let option   = {
+        title: {
+            text: '饼状图数据展示',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item'
 	    },
-	    tooltip: {
-	        trigger: 'item'
-	    },
-	    series: [{
-	        name: 'Access From',
-	        type: 'pie',
-	        radius: '50%',
-	        data: [],
-	        emphasis: {
-	            itemStyle: {
-	                shadowBlur: 10,
-	                shadowOffsetX: 0,
-	                shadowColor: 'rgba(0, 0, 0, 0.5)'
+        series: [{
+            name: 'Access From',
+            type: 'pie',
+            radius: '50%',
+            data: [],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
 	            }
 	        }
 	    }]
 	};
-	receiveData.series.forEach((item,index)=>{
-		option.series[0].data.push({ value:item, name:receiveData.xAxis[index]});			
+    receiveData.series.forEach((item,index)=>{
+        option.series[0].data.push({ value:item, name:receiveData.xAxis[index]});			
 	})
-	pieChart.setOption(option);
+    pieChart.setOption(option);
 };
