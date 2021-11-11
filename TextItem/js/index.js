@@ -65,14 +65,14 @@
     });
 	
 	// 小圆点 点击切换
-	dotBoxAll.onclick = function(e){
-		dotBox.forEach((item,index)=>{
-			if(item == e.target) {
-				current = index;
-				SwitchImage(index);
-			};
-		});
-	};	
+    dotBoxAll.onclick = function(e){
+        dotBox.forEach((item,index)=>{
+            if(item == e.target) {
+                current = index;
+                SwitchImage(index);
+            };
+        });
+    };	
 }
 
 
