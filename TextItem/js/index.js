@@ -81,10 +81,10 @@
  *  @param { String }	type	请求参数
  */
 function ajaxGet(type) { 
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET',"https://edu.telking.com/api/"+"?type="+type, true);
-    xhr.send();
-	return xhr;
+    const   xhr = new XMLHttpRequest();
+            xhr.open('GET',"https://edu.telking.com/api/"+"?type="+type, true);
+            xhr.send();
+            return xhr;
 }
 
  /** 
@@ -131,7 +131,8 @@ function ajaxGet(type) {
 
 // 曲线图
 {
-	let graph = echarts.init(document.querySelector('#graph'));
+    // 获取渲染曲线图 DOM
+	let graph            = echarts.init(document.querySelector('#graph'));
 	let parameterFailure = ajaxGet("month");
 	let receiveData;
 	parameterFailure.onreadystatechange = function (){
@@ -144,8 +145,9 @@ function ajaxGet(type) {
 
 // 柱状图
 {
-	let barGraph = echarts.init(document.querySelector('#barGraph'));
-	let parameterFailure = ajaxGet("week");
+    // 获取渲染柱状图 DOM
+	let barGraph            = echarts.init(document.querySelector('#barGraph'));
+	let parameterFailure    = ajaxGet("week");
 	let receiveData;
 	parameterFailure.onreadystatechange = function (){
 		if (parameterFailure.readyState == 4 && parameterFailure.status == 200) {
@@ -158,8 +160,9 @@ function ajaxGet(type) {
 
 // 饼状图
 function pieChartFn(receiveData){
+    // 获取饼状图 DOM
 	let pieChart = echarts.init(document.getElementById('pieChart'));
-	let option = {
+	let option   = {
 	    title: {
 	        text: '饼状图数据展示',
 	        left: 'center'
