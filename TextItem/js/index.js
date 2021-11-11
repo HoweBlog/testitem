@@ -68,13 +68,15 @@ function ajaxGet(type,titleText,seriesType,RenderingNode) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             receivedData = JSON.parse(xhr.responseText);
             console.log(receivedData.data);
-            setTimeout(()=>{
-                chartData(titleText,seriesType,receivedData.data.xAxis,receivedData.data.series,RenderingNode);
-            },500)
+			afterAsynchronous(titleText,seriesType,receivedData.data.xAxis,receivedData.data.series,RenderingNode);
         }
-        
     }
 }
+
+// 异步请求获取数据后执行程序
+function afterAsynchronous(titleText,seriesType,xAxisData,seriesData,RenderingNode){
+	chartData(titleText,seriesType,xAxisData,seriesData,RenderingNode);
+};
 
  /** 
  *  处理 Echarts数据
@@ -82,6 +84,8 @@ function ajaxGet(type,titleText,seriesType,RenderingNode) {
  *  @param { Array  }   seriesData  Y轴数据
  */
  function chartData(titleText,seriesType,xAxisData,seriesData,RenderingNode){
+	 console.log(seriesData)
+	 // debugger
     let option =  {
         title: {
             text: titleText,
@@ -89,7 +93,6 @@ function ajaxGet(type,titleText,seriesType,RenderingNode) {
         },
         xAxis: {
             type: 'category',
-            boundaryGap: false,
             data: xAxisData
         },
         color: "#337af1",
@@ -99,10 +102,11 @@ function ajaxGet(type,titleText,seriesType,RenderingNode) {
         series: [{
             barWidth: '30%',
             data: seriesData,
-            // type: seriesType,
+            type: seriesType,
+			smooth: true,
+			areaStyle: {}
         }]
     };
-    console.log({option});
     RenderingNode.setOption(option);
  };
 
@@ -183,8 +187,8 @@ let barGraph = echarts.init(document.getElementById('barGraph'));
 // 柱状图
 
 {
-    let barGraph = echarts.init(document.getElementById('barGraph'));
-    ajaxGet("week","柱状图数据展示","bar",barGraph);
+    // let barGraph = echarts.init(document.getElementById('barGraph'));
+    // ajaxGet("week","柱状图数据展示","bar",barGraph);
 
     
     // let option = {
