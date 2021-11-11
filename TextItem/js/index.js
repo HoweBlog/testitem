@@ -1,7 +1,7 @@
 // 导航栏 点击事件
 {
-	let navBtn 		= document.querySelectorAll(".navigation-right li>a");		// 获取导航节点
-	let navBtnBox 	= document.querySelector(".navigation-right");				// 获取导航节点
+	let navBtn      = document.querySelectorAll(".navigation-right li>a");      // 获取导航节点
+	let navBtnBox   = document.querySelector(".navigation-right");              // 获取导航节点
 	navBtnBox.onclick = function(e){
 		navBtn.forEach((item,indx)=>{
 			if(item == e.target){
@@ -18,10 +18,10 @@
     let carousel    = document.querySelector(".left.banner");       // 获取轮播图box
     let images      = document.querySelectorAll(".img_box>li");     // 获取轮播图片
     let dotBox      = document.querySelectorAll(".dot_box>li");     // 获取轮播圆点
-    let dotBoxAll   = document.querySelector(".dot_box");     		// 获取轮播圆点
+    let dotBoxAll   = document.querySelector(".dot_box");           // 获取轮播圆点
     let arrow       = document.querySelectorAll(".arrow>li");       // 获取上下切换按钮
-    let current     = 0;    	// 当前播放位置
-    let Timer       = null; 	// 定时器
+    let current     = 0;        // 当前播放位置
+    let Timer       = null;     // 定时器
 
     // 自动轮播
     function autoplay() {
@@ -91,9 +91,9 @@ function ajaxGet(type) {
  *  处理 Echarts数据
  *  @param { String }       titleText       图表 title
  *  @param { String }       seriesType      数据展示类型 曲线/柱状
- *  @param { DOM 	}    	RenderingNode   渲染节点
- *  @param { Array  }   	xAxisData   	X轴数据
- *  @param { Array  }   	seriesData  	Y轴数据
+ *  @param { DOM 	}       RenderingNode   渲染节点
+ *  @param { Array  }       xAxisData       X轴数据
+ *  @param { Array  }       seriesData      Y轴数据
  */
  function chartData(titleText,seriesType,RenderingNode,xAxisData,seriesData){
     let option =  {
@@ -132,8 +132,8 @@ function ajaxGet(type) {
 // 曲线图
 {
     // 获取渲染曲线图 DOM
-	let graph            = echarts.init(document.querySelector('#graph'));
-	let parameterFailure = ajaxGet("month");
+	let graph               = echarts.init(document.querySelector('#graph'));
+	let parameterFailure    = ajaxGet("month");
 	let receiveData;
 	parameterFailure.onreadystatechange = function (){
 		if (parameterFailure.readyState == 4 && parameterFailure.status == 200) {
