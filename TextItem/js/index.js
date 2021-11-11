@@ -35,11 +35,9 @@
     // 图片切换
     function SwitchImage(current){
         // 删除兄弟节点 class
-        images.forEach(item=>{
+        images.forEach((item,index)=>{
             item.classList.remove("current");
-        });
-        dotBox.forEach(item=>{
-            item.classList.remove("current");
+			dotBox[index].classList.remove("current");
         });
         // 添加当前类
         images[current].classList.add("current");
