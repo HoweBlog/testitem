@@ -101,6 +101,15 @@ function ajaxGet(type) {
             text: titleText,
             left: 'center'
         },
+		tooltip: {
+		    trigger: 'axis',
+		    axisPointer: {
+				type: 'cross',
+				label: {
+					backgroundColor: '#6a7985'
+				}
+		    }
+		},
         xAxis: {
             type: 'category',
             data: xAxisData
